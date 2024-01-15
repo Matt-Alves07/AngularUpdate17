@@ -1,0 +1,20 @@
+<p>Template works! Hello, {{name}}</p>
+
+<button [disabled]="isDisabled">Test</button>
+
+<p [class.background-red]="true">{{name}}</p>
+
+<div
+  class="mouse-div"
+  (mousemove)="onMouseMove($event)"
+>
+</div>
+
+<br>
+
+<input type="text" [(ngModel)]="inputName" placeholder="Type your name here..." />
+<p>Name with two way data binding: {{inputName}}</p>
+
+<br>
+<input type="text" #name value="John Doe" placeholder="Type your name..." />
+<h3>Value of input field above: {{name.value}}</h3>

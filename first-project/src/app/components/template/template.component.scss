@@ -1,0 +1,12 @@
+:host {
+  .background-red { background-color: red; }
+  .background-blue { background-color: blue; }
+}
+
+.mouse-div {
+  width: 300px;
+  height: 300px;
+  margin: 1 auto;
+  cursor: pointer;
+  background-color: aqua;
+}
