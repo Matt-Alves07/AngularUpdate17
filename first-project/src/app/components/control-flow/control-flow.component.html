@@ -1,0 +1,36 @@
+<h2>Control flow</h2>
+
+<h3>IF</h3>
+@if (isDeveExibirTexto) {
+  <p>This text is been displayed using a if control flow</p>
+} @else {
+  <p>This text is only displayed when the first one is hidden</p>
+}
+
+<h3>FOR</h3>
+@if (dataList$ | async; as data){
+  <ul>
+    @for (item of data; track item) {
+      <li>{{ item }}</li>
+    } @empty {
+      <li>No items in list.</li>
+    }
+  </ul>
+} @else {
+  <p>Loading...</p>
+}
+
+<h3>SWTICH/CASE</h3>
+@switch (switchCondition) {
+  @case ("A") {
+    <p>Value is A.</p>
+  }
+
+  @case ("B") {
+    <p>Value is B.</p>
+  }
+
+  @default {
+    <p>Value not found.</p>
+  }
+}
