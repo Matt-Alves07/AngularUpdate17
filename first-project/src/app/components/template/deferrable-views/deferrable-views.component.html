@@ -1,0 +1,38 @@
+<h2>Deferrable views</h2>
+<p>In this section we will discuss how to use deferred views. Deferred views are views that do not get executed immediately when they are created, but instead wait until a later time.</p>
+
+<p>Options available for defer conditional's on:</p>
+<ul>
+  <li>idle - loaded immediatelly after the browser finish to load everything else</li>
+  <li>timer - loaded after a give time</li>
+  <li>viewport - loaded after the defer component is displayed</li>
+  <li>interaction - loaded after the interaction with another content on screen</li>
+  <li>hover - loaded after the mouse hover event</li>
+  <li>immediate - loaded immediatelly, even if the browser didn't finish loading everything else</li>
+  <li>prefetch - loaded after a condition, and only display the content after the first condition is match</li>
+</ul>
+
+<p>The when condition doesn't have options, and it only works with a boolean value after it.</p>
+
+<!--Content displayed on success, after the loading content-->
+<!--@defer(on timer(5s)) {-->
+<button (click)="isTrue = true">Change view</button>
+@defer(when isTrue) {
+  <app-new-component></app-new-component>
+
+<!--Info displayed before the loading content-->
+<!--Also, allow to put a minimum time to be displayed-->
+<!--} @placeholder(minimum 5s) {-->
+} @placeholder {
+  <p>Retrieving data</p>
+
+<!--Info displayed after the placeholder, and before the defer content, while loading data-->
+<!--Also, it's possible to check how much time it took, and put a minimum timer, if it takes the time definend in after timer-->
+<!--} @loading(after 150ms; minimum 2s) {-->
+} @loading {
+  <p>Loading...</p>
+
+<!--Infor displayed on error cases-->
+} @error {
+  <p>Error!</p>
+}

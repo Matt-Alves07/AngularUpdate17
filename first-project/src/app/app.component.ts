@@ -5,6 +5,7 @@ import { RouterOutlet } from '@angular/router';
 import { TemplateComponent } from './components/template/template.component';
 import { NewComponentComponent } from './components/new-component/new-component.component';
 import { ControlFlowComponent } from './components/control-flow/control-flow.component';
+import { DeferrableViewsComponent } from './components/template/deferrable-views/deferrable-views.component';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import { ControlFlowComponent } from './components/control-flow/control-flow.com
     TemplateComponent,
     ControlFlowComponent,
     NewComponentComponent,
+    DeferrableViewsComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
